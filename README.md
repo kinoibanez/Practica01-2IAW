@@ -17,3 +17,17 @@
 - Para habilitar el servicio de arranque automaticamente ocn la máquina hacemos uso de *_sudo systemctl enabled httpd_*
 
 - Y por ultimo para comprobar el estado hacemos uso de *_sudo systemctl status httpd_*
+
+## El siguiente paso es la creación del script.
+
+- El script lo creamos en una carpeta llamada script, el archivo se llamará install_lamp.sh, Es muy importante darle permisos con un chmod +x sobre el archivo para que asi pueda funcionar.
+
+- Aqui podemos ver el funcionamiento del script.
+
+![](/Practica01-2IAW/images/cap1.png)
+
+## Cambiar permisos para el directorio.
+
+- Tenemos que cambiar los permisos del propietario /var/www/html. El nuevo propietario tiene que ser apache:apache.
+
+![](/Practica01-2IAW/images/cap2.png)
