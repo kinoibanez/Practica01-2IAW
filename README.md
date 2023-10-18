@@ -31,3 +31,17 @@
 - Tenemos que cambiar los permisos del propietario /var/www/html. El nuevo propietario tiene que ser apache:apache.
 
 ![](/Practica01-2IAW/images/cap2.png)
+
+
+## Directorio temporal.
+
+- El directorio /tmp es un archivo temporal. Cada vez que se reinicia la máquina se borra la "basura" que haya dentro.
+
+
+## Comando SED.
+
+- Nos sirve como una "navaja suiza" para buscar cosas en un archivo de texto. Sirve para buscar cadenas. Tiene diferentes funciones.
+
+- Ej: 's/pepe/PEPE' prueba --> Cambiaria el nombre de pepe de minuscula a mayuscula en el archivo prueba.
+
+- EJ:  -i 's/pepe/PEPE' --> Cambia permanentemente el nombre.
