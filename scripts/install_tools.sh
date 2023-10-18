@@ -60,6 +60,15 @@ chown -R apache:apache /var/www/html
 
 cp /var/www/html/phpmyadmin/config.sample.inc.php /var/www/html/phpmyadmin/config.inc.php
 
+# Generamos un valor aleatorio de 32 caracteres para la variable blowfish_secret
+RANDOM_VALUE=`openssl rand -hex 16`
+
+# Modificamos la variable blowfish_secret en el archivo de configuración
+sed -i "s/\(\$cfg\['blowfish_secret'\] =\).*/\1 '$RANDOM_VALUE';/" /var/www/html/phpmyadmin/config.inc.php
+
+
+
+
 #Eliminamos si existe alguna base de dato previa de PhPMyAdmin
 
 mysql -u root <<< "DROP DATABASE IF EXISTS phpmyadmin"
