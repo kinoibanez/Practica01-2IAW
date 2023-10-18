@@ -24,13 +24,13 @@
 
 - Aqui podemos ver el funcionamiento del script.
 
-![](/Practica01-2IAW/images/cap1.png)
+![](images/cap1.png)
 
 ## Cambiar permisos para el directorio.
 
 - Tenemos que cambiar los permisos del propietario /var/www/html. El nuevo propietario tiene que ser apache:apache.
 
-![](/Practica01-2IAW/images/cap2.png)
+![](images/cap2.png)
 
 
 ## Directorio temporal.
