@@ -96,7 +96,51 @@
 
 - Y tendremos que descomprimir el archivo dentro del directorio que hemos comentado anteriormente.
 
+- Por ultimo tendremos que renombrar el directorio para llamarlo de una manera especifica:
 
+- Usando el comando `sudo mv phpMyAdmin-5.2.1-all-languages/ phpmyadmin`
+
+- Modificamos los permisos para poder tener control total: `sudo chown -R apache:apache /var/www/html/phpmyadmin`
+
+# Configuración de una variable.
+
+- Creamos el archivo de configuración.
+
+- `sudo cp /var/www/html/phpmyadmin/config.sample.inc.php /var/www/html/phpmyadmin/config.inc.php`
+
+- Un ejemplo de como podian ser las variables son las siguientes:
+
+- ![](images/cap12.png)
+
+
+## Documentación de las variables.
+
+- Esta documentación es extraida de la página web de Jose Juan-
+
+- [Enlace a la página de Jose Juan / IAW ](https://josejuansanchez.org/iaw/practica-01-02-teoria/index.html)
+
+- El comando sed que se utiliza para modificar y eliminar texto en un archivo. Vamos a explicar los parámetros que se han utilizado en el ejemplo anterior.
+
+- i: Indica que queremos que los cambios se tienen que aplicar directamente en el archivo que se pasa como parámetro. Si no se utilizase este paráemtro, los cambios se mostrarían por la salida estándar pero el archivo no se modificaría.
+
+- s/cadena_a_buscar/cadena_de_reemplazo/: La sintaxis Es la sintaxis que se utiliza para buscar y reemplazar texto en un archivo. En este caso, se busca la cadena $cfg['blowfish_secret'] = y se reemplaza por la cadena $cfg['blowfish_secret'] = '$RANDOM_VALUE';.
+
+- Observe que se utiliza la barra invertida o backslash \ para escapar los caracteres (, [ y $.
+
+- En la cadena de reemplazo se utiliza \1 '$RANDOM_VALUE';. El número \1 quiere decir que se debe poner el patrón que hemos buscado, es decir, se pondrá $cfg['blowfish_secret'] = seguido del contenido de la variable $RANDOM_VALUE.
+
+
+### Ejemplo de la variable.
+
+- Un ejemplo de la variable podría ser el siguiente: `sed -i "/blowfish_secret/a \$cfg\['TempDir'\] = '/tmp';" /var/www/html/phpmyadmin/config.inc.php `
+
+## Configuración de la base de datos.
+
+- Dentro del directorio *_/var/www/html/phpmyadmin/sql/create_tables.sql_* hay un script con la base de datos en sql.
+
+- Para crearlo añadiremos a nuestro script lo siguiente. Logicamente el primer apartado de las variables tendremos que guardarlo en un *.env* y hacer un *source* para añadirlo al script.
+
+- ![](images/cap13.png)
 
 
 ## Comando SED.
