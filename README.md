@@ -13,7 +13,8 @@
 
 - Hacemos uso del siguiente comando poniendo *_git_* para asi poder hacer uso de su comando.
 
-- |[](images/cap5.png)
+- ![](images/cap5.png)
+
 ## Instalar apache2.
 
 - Como primer paso hacemos uso del comando *_sudo dnf install httpd -y_* para instalar el servicio de apache y despues tendremos que activar ese archivo para iniciarlo.
@@ -77,6 +78,24 @@
 
 
 # HERRAMIENTAS ADICIONALES ( IMPORTANTE )
+- Tenemos que instalar herramientas para que ambos puedan trabajar de manera conjunta, así que lo siguiente que tendremos que hacer es instalar los modulos necesarios de PhP para PhPMyAdmin.
+
+- Usamos el siguiente comando;
+
+- `sudo dnf install php-mbstring php-zip php-json php-gd php-fpm php-xml -y`
+
+- Reiniciaremos el directorio de apache.
+
+- Accederemos dentro de */var/www/html* y descargaremos wget.
+
+- `sudo dnf install wget -y`
+
+- Descargamos el codigo fuente de PhpMyAdmin con la URL de la página oficial.
+
+- `sudo wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.tar.gz`
+
+- Y tendremos que descomprimir el archivo dentro del directorio que hemos comentado anteriormente.
+
 
 
 
