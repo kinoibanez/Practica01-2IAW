@@ -2,7 +2,7 @@
 
 #Configuramos el script para que se muestren los comandos que se ejecutan 
 
-set -x
+set -ex
 
 #Importamos el archivo de variables
 
@@ -66,9 +66,6 @@ RANDOM_VALUE=`openssl rand -hex 16`
 # Modificamos la variable blowfish_secret en el archivo de configuración
 sed -i "s/\(\$cfg\['blowfish_secret'\] =\).*/\1 '$RANDOM_VALUE';/" /var/www/html/phpmyadmin/config.inc.php
 
-
-
-
 #Eliminamos si existe alguna base de dato previa de PhPMyAdmin
 
 mysql -u root <<< "DROP DATABASE IF EXISTS phpmyadmin"
@@ -82,4 +79,3 @@ mysql -u root < /var/www/html/phpmyadmin/sql/create_tables.sql
 mysql -u root <<< "DROP USER IF EXISTS $PMA_USER@'%'"
 mysql -u root <<< "CREATE USER $PMA_USER@'%' IDENTIFIED BY '$PMA_PASS'"
 mysql -u root <<< "GRANT ALL PRIVILEGES ON $PMA_DB.* TO $PMA_USER@'%'"
-
