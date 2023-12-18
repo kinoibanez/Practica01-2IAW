@@ -26,11 +26,11 @@ systemctl enable httpd
 dnf install mysql-server -y
 
 #Iniciamos el servicio de mysql.
-systemctl start mysqld -y
+sudo systemctl start mysqld -y
 
 #Configuramos el servicio para que se inicia automaticamente en cada reinicio.
 
-systemctl enable mysqld -y
+sudo systemctl enable mysqld -y
 
 -------------------------------------------------------------------------------------
 #Instalamos php
